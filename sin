@@ -1,0 +1,4 @@
+function sss=sss(a)
+%     sss=sin(a/180*pi);
+    sss=sin(a);
+end
