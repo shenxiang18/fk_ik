@@ -1,0 +1,4 @@
+function ccc=ccc(a)
+%     ccc=cos(a/180*pi);
+     ccc=cos(a);
+end
