@@ -1,0 +1,6 @@
+function T = T_para(theta,d,a,alpha)
+    T=[ccc(theta),-sss(theta)*ccc(alpha),sss(theta)*sss(alpha),a*ccc(theta);
+        sss(theta),ccc(theta)*ccc(alpha),-ccc(theta)*sss(alpha),a*sss(theta);
+        0,sss(alpha),ccc(alpha),d;
+        0,0,0,1];
+end
