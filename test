@@ -1,0 +1,22 @@
+L1 = Link('d', 0.089159, 'a', 0,        'alpha', pi/2 ,'standard' );
+L2 = Link('d', 0,        'a', -0.42500,   'alpha',   0  ,'standard' );
+L3 = Link('d', 0,        'a', -0.39225, 'alpha',   0  ,'standard' );
+L4 = Link('d', 0.10915,  'a', 0,        'alpha', pi/2 ,'standard' );
+L5 = Link('d', 0.09465,  'a', 0,        'alpha', -pi/2 ,'standard');
+L6 = Link('d', 0.08230,  'a', 0,        'alpha',   0   ,'standard');
+ 
+robot_UR5=SerialLink([L1,L2,L3,L4,L5,L6],'name','UR5');   %SerialLink 类函数
+robot_UR5.display();  %Link 类函数
+robot_UR5.teach(); %可以自由拖动的关节角度
+ 
+%theta=[1,1/2,1/3,1,1,1];%没有什么含义，随便取的
+theta=[1,1/2,1/3,1,1,1];
+% robot_UR5.plot(theta);   %SerialLink 类函数
+ 
+%利用机器人工具箱求正、逆运动学
+A=fkine(robot_UR5,theta);
+ AA=ikine(robot_UR5,A);
+ 
+%利用刚写的函数求正、逆运动学
+B=zhengyundongxue(theta);
+BB=niyundongxue(B);
